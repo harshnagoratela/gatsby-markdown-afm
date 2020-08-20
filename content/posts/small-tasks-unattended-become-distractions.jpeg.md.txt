@@ -3,7 +3,7 @@ template: post
 title: small-tasks-unattended-become-distractions.jpeg
 slug: small-tasks-unattended-become-distractions.jpeg
 draft: true
-date: 2020-06-26T07:07:03-07:00
+date: 2020-06-26T07:07:04-07:00
 image: /images/small-tasks-unattended-become-distractions.jpeg
 featuredImage: /photos/2020-XX-XX.png
 category: Journal

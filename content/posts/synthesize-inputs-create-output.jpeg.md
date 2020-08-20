@@ -7,7 +7,7 @@ date: 2020-06-30T06:54:26-07:00
 image: /images/synthesize-inputs-create-output.jpeg
 featuredImage: /photos/2020-06-30.png
 category: Journal
-description: synthesize-inputs-create-output.jpeg
+description: Generate new ideas by making connections others may not notice. Each individual's inputs are unique and shape outputs.
 tags:
   - humility
   - wisdom

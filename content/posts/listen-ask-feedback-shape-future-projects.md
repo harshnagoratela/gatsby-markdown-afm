@@ -1,6 +1,6 @@
 ---
 template: post
-title: Listen to feedback to shape future course of projects
+title: Listen to feedback shape future projects
 slug: listen-ask-feedback-shape-future-projects
 draft: false
 date: 2020-05-28T08:57:53-07:00
