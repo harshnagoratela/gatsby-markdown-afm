@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Link } from 'gatsby';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
+import Image from 'gatsby-image';
 
 type Props = {
   edges: Edges
@@ -22,7 +23,11 @@ const Feed = ({ edges }: Props) => (
             <Link to={edge.node.fields.categorySlug} className={styles['feed__item-meta-category-link']}>{edge.node.frontmatter.category}</Link>
           </span>
         </div>
-        {edge.node.frontmatter.featuredImage &&
+        {/*localImage is gatsby optimized , featuredImage is simple image. So if localImage is found try to render it first else featuredImage */}
+        {edge.node.frontmatter.localImage &&
+            <Image fluid={edge.node.frontmatter.localImage.childImageSharp.fluid}  alt={edge.node.frontmatter.title} />
+        }
+        {!edge.node.frontmatter.localImage && edge.node.frontmatter.featuredImage &&
             <img src={edge.node.frontmatter.featuredImage} alt={edge.node.frontmatter.title} />
         }
         <h2 className={styles['feed__item-title']}>

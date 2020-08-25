@@ -11,7 +11,7 @@ type Props = {
   title: string,
   subtitle: string,
   description?: string,
-  socialImage? :string
+  socialImage? :File
 };
 
 const Layout = ({
@@ -23,7 +23,7 @@ const Layout = ({
   canonicalUrl
 }: Props) => {
   const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : author.photo;
+  const metaImage = socialImage != null && socialImage.childImageSharp !=null  ? socialImage.childImageSharp.fluid.src : author.photo;
   const metaImageUrl = url + withPrefix(metaImage);
   const { subtitle: siteSubtitle } = useSiteMetadata();
 

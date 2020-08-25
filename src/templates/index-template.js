@@ -74,6 +74,13 @@ export const query = graphql`
             category
             description
             featuredImage
+            localImage {
+                childImageSharp {
+                    fluid (srcSetBreakpoints: [200, 400]) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
           }
         }
       }
@@ -93,11 +100,17 @@ export const query = graphql`
           }
           frontmatter {
             title
-
             date
             category
             description
             featuredImage
+            localImage {
+                childImageSharp {
+                    fluid (srcSetBreakpoints: [200, 400]) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
           }
         }
       }

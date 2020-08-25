@@ -8,7 +8,7 @@ description: Testing images optimization implementation for images inside posts
 category: testing
 tags:
   - test
+featuredImage: '/images/1586539228.jpg'
+localImage: '/media/image-2.jpg'
 ---
-![](/media/cpu.svg "CPU")
-
-![](/media/type-through-time.jpg)
+Testing images optimization implementation for images inside posts
