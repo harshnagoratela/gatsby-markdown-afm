@@ -18,20 +18,7 @@ const usePostsList = () => {
                         title
                         date
                         description
-                        socialImage {
-                            childImageSharp {
-                                fluid (srcSetBreakpoints: [200, 400]) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                        localImage {
-                            childImageSharp {
-                                fluid (srcSetBreakpoints: [200, 400]) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
+                        socialImage
                         slug
                         featuredImage
                         tags

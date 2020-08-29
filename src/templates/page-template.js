@@ -17,7 +17,7 @@ const PageTemplate = ({ data }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
   const { frontmatter } = data.markdownRemark;
-  const { title: pageTitle, description: pageDescription, socialImage, localImage } = frontmatter;
+  const { title: pageTitle, description: pageDescription, socialImage } = frontmatter;
   const metaDescription = pageDescription !== null ? pageDescription : siteSubtitle;
 
   return (
@@ -39,20 +39,7 @@ export const query = graphql`
         title
         date
         description
-        socialImage {
-            childImageSharp {
-                fluid (srcSetBreakpoints: [200, 400]) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        localImage {
-            childImageSharp {
-                fluid (srcSetBreakpoints: [200, 400]) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
+        socialImage
         featuredImage
       }
     }

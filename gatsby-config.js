@@ -70,14 +70,14 @@ module.exports = {
         name: 'css',
         path: `${__dirname}/static/css`
       }
-    },    
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
         path: `${__dirname}/static`
       }
-    },    
+    },
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -135,26 +135,28 @@ module.exports = {
       }
     },
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',  
-    'gatsby-plugin-netlify-cms-paths',  
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           'gatsby-remark-relative-images',
           {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 650
-            }
-          },
-          {
             resolve: 'gatsby-remark-katex',
             options: {
               strict: 'ignore'
             }
           },
-          'gatsby-remark-emoji',  // <-- this line adds emoji          
+            'gatsby-remark-emoji',  // <-- this line adds emoji
+
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 960,
+              withWebp: true,
+              ignoreFileExtensions: [],
+            }
+          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
@@ -166,7 +168,25 @@ module.exports = {
           'gatsby-remark-external-links'
         ]
       }
-    },        
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/posts`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/photos`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/images`
+      }
+    },
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-netlify-cms',

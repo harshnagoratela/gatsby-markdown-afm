@@ -29,8 +29,8 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
 
   const { edges } = data.allMarkdownRemark;
   const featuredEdges = data.featuredposts.edges;
-  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle + " // " + siteSubtitle;
-  
+  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle + " // digital developer // 📚 🎿 🚲 🎾 ⚾ ⛰ 📝 ";
+
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
       {currentPage>0 &&
@@ -74,13 +74,6 @@ export const query = graphql`
             category
             description
             featuredImage
-            localImage {
-                childImageSharp {
-                    fluid (srcSetBreakpoints: [200, 400]) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
           }
         }
       }
@@ -100,17 +93,11 @@ export const query = graphql`
           }
           frontmatter {
             title
+
             date
             category
             description
             featuredImage
-            localImage {
-                childImageSharp {
-                    fluid (srcSetBreakpoints: [200, 400]) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
           }
         }
       }

@@ -18,7 +18,7 @@ const Post = ({ post }: Props) => {
     console.log(post)
   const { html } = post;
   const { tagSlugs, slug } = post.fields;
-  const { tags, title, date, featuredImage, localImage } = post.frontmatter;
+  const { tags, title, date, featuredImage } = post.frontmatter;
 
   return (
     <div className={styles['post']}>
@@ -27,7 +27,7 @@ const Post = ({ post }: Props) => {
 
 </div>
       <div className={styles['post__content']}>
-        <Content body={html} title={title} featuredImage={featuredImage} localImage={localImage}/>
+        <Content body={html} title={title} featuredImage={featuredImage} />
       </div>
 
       <div className={styles['post__footer']}>
