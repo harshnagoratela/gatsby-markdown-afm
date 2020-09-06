@@ -21,6 +21,7 @@ const usePostsList = () => {
                         socialImage
                         slug
                         featuredImage
+                        image
                         tags
                         category
                         template
