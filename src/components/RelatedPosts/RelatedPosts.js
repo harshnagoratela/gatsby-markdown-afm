@@ -16,9 +16,9 @@ const RelatedPosts = ({ post, allPosts }) => {
                 <>
                     <h2>Related Posts</h2>
                     <div style={{ display: "table" }}>
-                        {allRelatedPosts.map((item,index) => (
-                            <div key={index} style={{ display: "table-cell", padding: "1rem", width: "33%" }}>
-                                <img src={item.post.node.frontmatter.featuredImage || item.post.node.frontmatter.image} alt={item.post.node.frontmatter.title} />
+                        {allRelatedPosts.map((item) => (
+                            <div style={{ display: "table-cell", padding: "1rem", width: "33%" }}>
+                                <img src={item.post.node.frontmatter.featuredImage} alt={item.post.node.frontmatter.title} />
                                 <Link to={item.post.node.fields.slug}>
                                     <h3>{item.post.node.frontmatter.title}</h3>
                                 </Link>
