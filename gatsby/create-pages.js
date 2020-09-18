@@ -33,10 +33,10 @@ const createPages = async ({ graphql, actions }) => {
     path: '/categories',
     component: path.resolve('./src/templates/categories-list-template.js')
   });
-  
+
   // News list
   createPage({
-    path: '/news',
+    path: '/links',
     component: path.resolve('./src/templates/news-list-template.js')
   });
 

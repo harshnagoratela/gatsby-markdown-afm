@@ -13,17 +13,21 @@ const NewsListTemplate = () => {
   const allNews = useNewsList();
 
   return (
-    <Layout title={`News - ${title}`} description={subtitle}>
+    <Layout title={`Links - ${title}`} description={subtitle}>
       <Sidebar />
-      <Page title="News">
+      <Page title="Links">
           <div className="newsContainer">
               {allNews && allNews.map(({ node }, index) => (
                   <div>
                       <img src={'https://source.unsplash.com/1600x900/?abstract.'+ node.articleid} alt={node.title} />
-                      <Link to={`/news/${node.articleid}`}>                          
+                      <Link to={`/news/${node.articleid}`}>
                           {node.title && <h3>{node.title}</h3>}
                       </Link>
-                      {node.excerpt && <div>{node.excerpt}</div>}
+                      <div>{node.comment}</div>
+                      <div>From {node.author} at {node.source}</div>
+                      {node.highlight && <blockquote>{node.highlight}</blockquote>}
+                      {node.highlight2 && <blockquote>{node.highlight2}</blockquote>}
+                      <p><a href={node.url} target="_blank" >Read the original post &gt;</a></p>
                   </div>
               ))}
           </div>

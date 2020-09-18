@@ -29,19 +29,26 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
 
   const { edges } = data.allMarkdownRemark;
   const featuredEdges = data.featuredposts.edges;
-  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle + " // digital developer // 📚 🎿 🚲 🎾 ⚾ ⛰ 📝 ";
+  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle + ' | ' + siteSubtitle;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
+
+
       {currentPage>0 &&
         <Helmet>
             <link rel="canonical" href={homepage} />
             <meta name="robots" content="noindex" />
         </Helmet>
       }
+
       <Sidebar isIndex />
       <Page>
-        <Feed edges={featuredEdges} />
+<h2>{siteTitle}</h2>
+
+  <a href="/?new"><img src={'https://source.unsplash.com/800x300/?abstract.'+ Math.random()} alt={pageTitle} width={"800"} height={"300"}/></a>
+
+  <p>{siteSubtitle} <br/>📚 🎿 🚲 🎾 ⚾ ⛰ 📝</p>
         <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}

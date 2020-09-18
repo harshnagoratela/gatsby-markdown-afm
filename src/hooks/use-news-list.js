@@ -1,7 +1,7 @@
 // @flow strict
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useNewsList = () => { 
+const useNewsList = () => {
   const { allGoogleSheetLinksRow } = useStaticQuery(
     graphql`
       query NewsListQuery {
@@ -11,6 +11,7 @@ const useNewsList = () => {
               articleid
               author
               dateadded
+              comment
               excerpt
               extractedkeywords
               highlight
