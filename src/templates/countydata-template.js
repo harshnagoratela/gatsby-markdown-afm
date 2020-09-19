@@ -31,6 +31,11 @@ const CountyDataTemplate = () => {
           name: 'case_rate',
           type: 'line',
           values: [countyData.node.caseratetier2, countyData.node.caseratetier3,countyData.node.caseratetier4]
+        },
+        {
+          name: 'positive_rate',
+          type: 'line',
+          values: [countyData.node.positiveratetier2, countyData.node.positiveratetier3,countyData.node.positiveratetier4]
         }
       ]
     };
@@ -59,9 +64,8 @@ const CountyDataTemplate = () => {
           {selectedCountyLineData &&
             <ReactFrappeChart
                 type="axis-mixed"
-                colors={"purple","light-blue"}
+                colors={["purple","light-blue"]}
                 height={250}
-                axisOptions={{ xAxisMode: "tick", xIsSeries: 1 }}
                 data={selectedCountyLineData}
             />
           }
